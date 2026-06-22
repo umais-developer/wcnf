@@ -1,0 +1,48 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'vite.config.js'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Copy built files to root
+        run: |
+          cp dist/index.html index.html
+          cp dist/portfolio-styles.css portfolio-styles.css 2>/dev/null || true
+          rm -rf assets
+          cp -r dist/assets assets
+
+      - name: Commit and push built files
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add index.html assets
+          git diff --cached --exit-code || git commit -m "Auto-deploy: built files [skip ci]"
+          git push origin main

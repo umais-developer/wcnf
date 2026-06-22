@@ -1,0 +1,156 @@
+.wcnf-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.masthead {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  font-weight: 700;
+  margin-top: 56px;
+}
+
+.masthead h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.masthead h2 {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.masthead p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+.about-section {
+  padding: 120px 0;
+  background: #1D809F;
+  color: #ffffff;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 100px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ecb807 !important;
+  margin-bottom: 10px;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.signup-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  color: #ffffff;
+}
+
+.signup-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.form-subscribe .form-control {
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-subscribe .btn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: #ecb807;
+  border-color: #ecb807;
+  color: #212529;
+}
+
+.form-subscribe .btn:hover {
+  background-color: #d9a704;
+  border-color: #d9a704;
+}
+
+.form-subscribe .alert {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+footer {
+  padding: 40px 0;
+  background-color: #212529 !important;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .masthead h1 {
+    font-size: 2.5rem;
+  }
+
+  .masthead h2 {
+    font-size: 1.2rem;
+  }
+
+  .masthead p {
+    font-size: 1rem;
+  }
+
+  .about-section,
+  .signup-section {
+    padding: 80px 0;
+  }
+
+  .about-section h2,
+  .signup-section h2 {
+    font-size: 2rem;
+  }
+
+  .countdown {
+    gap: 15px;
+  }
+
+  .countdown-item {
+    padding: 15px 20px;
+    min-width: 80px;
+  }
+
+  .countdown-number {
+    font-size: 2rem;
+  }
+}
